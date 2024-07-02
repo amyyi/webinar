@@ -19,34 +19,28 @@ module.exports = {
     port: 5566,
     hot: true,
     historyApiFallback: true,
-    // proxy: [
-    //   {
-    //     context: ['/auth/email/login'],
-    //     target: 'http://localhost:3000',
-    //   }
-    // ],
     setupMiddlewares: (middlewares, devServer) => {
       if (!devServer) {
-        throw new Error('webpack-dev-server is not defined');
+        throw new Error('webpack-dev-server is not defined')
       }
 
       // Add proxy middleware
       devServer.app.use(
         '/api',
         createProxyMiddleware({
-          target: 'http://localhost:3000', // 你的 API 服务器地址
+          target: 'http://localhost:3000',
           changeOrigin: true,
           secure: false,
-        })
-      );
+        }),
+      )
 
-      return middlewares;
+      return middlewares
     },
     headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
-      "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept, Authorization"
-    }
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+      'Access-Control-Allow-Headers': 'X-Requested-With, Content-Type, Accept, Authorization',
+    },
   },
 
   resolve: {
@@ -66,7 +60,7 @@ module.exports = {
   },
   plugins: [
     new webpack.ProvidePlugin({
-      "React": "react",
+      React: 'react',
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash:8].css',

@@ -16,10 +16,6 @@ export const MyWebinars: FC = () => {
   const [posts, setPosts] = useState<ConvertedPost>([])
 
   useEffect(() => {
-    const a = async () => {
-      await apiFavouritePosts(`/posts?favourited`).then((data) => console.log(data))
-    }
-    a()
     if (!data?.data) {
       return
     }

@@ -34,8 +34,6 @@ export const apiFavoritePosts: Api<ParamsFavoritePosts, void> = (payload) =>
   })
 
 export const apiGetUrl = async (url: [string, number]) => {
-  // ['/posts?per_page=12&page=1', 1]
-  console.log('url', url)
   const response = await request<string, RespPosts>({
     url: url[0],
     method: 'GET',
@@ -43,17 +41,6 @@ export const apiGetUrl = async (url: [string, number]) => {
   })
   return response
 }
-
-// export const apiGetUrl = async (url: string) => {
-//   // ['/posts?per_page=12&page=1', 1]
-//   console.log('url', url)
-//   const response = await request<string, RespPosts>({
-//     url,
-//     method: 'GET',
-//     isNeedAuth: true,
-//   })
-//   return response
-// }
 
 export const apiFavouritePosts = async (url: string) => {
   const response = await request<string, RespPosts>({
