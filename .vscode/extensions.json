@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "jonkwheeler.styled-components-snippets",
+    "jpoissonnier.vscode-styled-components",
+    "streetsidesoftware.code-spell-checker",
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "stylelint.vscode-stylelint"
+  ]
+}
